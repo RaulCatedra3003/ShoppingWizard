@@ -73,7 +73,7 @@ header {
 .hamburger {
 	position: absolute;
 	right: 1em;
-	top: .5em;
+	top: 1.5em;
 	transition: all 200ms ease-in-out;
 }
 .hamburger:hover {
@@ -268,6 +268,10 @@ nav ul li i:hover {
 	padding-bottom: 1em;
 }
 
+.items-info {
+	display: none;
+}
+
 .items-garantie {
 	display: flex;
 	font-size: 0.55em;
@@ -288,67 +292,6 @@ nav ul li i:hover {
 	margin-top: 1em;
 	font-size: 0.4em;
 }
-
-/* Progress Bar Rules */
-
-.ProgressBar {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	width: 75%;
-	height: 10px;
-	border: 2px solid #a4a4a4;
-	border-left: 0;
-	border-right: 0;
-	background-color: #eeeeee;
-	border-radius: 5px;
-	margin: 30px auto;
-}
-
-.progressLabelProfile {
-    height: 25px;
-    width: 25px;
-    background-color:#eeeeee;
-    border: 2px solid#a4a4a4;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-}
-
-.titleprogressLabelProfile {
-    margin-top: -20px;
-}
-
-.progressBar-active {
-    background: rgb(34, 111, 255);
-	border: 3px solid rgb(34, 111, 255);
-}
-
-.progressBar-hide {
-	display: none;
-}
-
-/* Error mesage rules */
-.error-msg {
-    font-size: .7em;
-    color: red;
-    background-color: rgb(228, 177, 177);
-    width: fit-content;
-    padding: 5px;
-    margin: 2px 0 0 0;
-}
-
-.error-hiden {
-    display: none;
-}
-
-.buttons {
-    position: relative;
-    text-align: right;
-}
-
-
 
 /* Media Query rules */
 
@@ -394,19 +337,11 @@ nav ul li i:hover {
 	.hamburger {
 		display: none;
 	}
-	.logo {
-		margin-top: 1.5em;
-	}
 	header {
-		display: flex;
-		justify-content: space-between;
 		padding: 2em;
-		margin-bottom: 2em;
 	}
 	nav {
-		position: absolute;
-		top: 1em;
-		right: 0;
+		position: static;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
@@ -433,7 +368,7 @@ nav ul li i:hover {
 		align-items: flex-start;
 		justify-content: center;
 		width: 100%;
-		margin: 20px auto;
+		margin: 0 auto;
 		padding: 10px;
 		height: fit-content;
 	}
@@ -457,24 +392,18 @@ nav ul li i:hover {
 	.footer {
 		font-size: .8em;
 	}
-	.container-progressBar {
-		position: relative;
-		padding: 20px;
-	}
 }
 
 @media screen and (min-width: 1388px){
 	.main-div {
 		max-width: 1368px;
+		/* max-height: 678px; */
 	}
 	.product-images {
 		width: 60%;
 	}
 	.product-information{
 		width: 30%;
-	}
-	.ProgressBar {
-		max-width: 1041px;
 	}
 }
 
@@ -488,16 +417,6 @@ nav ul li i:hover {
 	.miniature {
 		height: 100px;
 		width: 100px;
-	}
-	.titleprogressLabelProfile {
-		margin-top: -60px;
-	}
-	.ProgressBar {
-		height: 25px;
-	}
-	.progressLabelProfile {
-		height: 50px;
-		width: 50px;
 	}
 }
 
@@ -525,8 +444,5 @@ nav ul li i:hover {
 	}
 	.main-div {
 		max-width: 1868px;
-	}
-	.titleprogressLabelProfile {
-		margin-top: -70px;
 	}
 }

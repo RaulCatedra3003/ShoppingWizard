@@ -1,0 +1,162 @@
+/* General rules */
+
+form {
+    /* background-color: darksalmon; */
+    width: 100%;
+    padding: 20px;
+}
+
+label, input {
+    display: block;
+}
+
+.Step3 {
+    /* background-color: darkslateblue; */
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Step3 > legend{
+    font-size: 25px;
+    margin-bottom: 35px;
+
+}
+
+.ShippingType > legend{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+
+.ShippingType {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.shipping-type-free, .shipping-type-extra, .shipping-type-premium {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+}
+.shipping-type-free input, .shipping-type-extra input , .shipping-type-premium input{
+    height: 25px;
+    margin: 7px 0;
+    margin-right: 7px;
+}
+
+#arriveInformation {
+    display: none;
+}
+.gift {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* background-color: salmon; */
+}
+
+.gift input {
+    height: 25px;
+    margin: 7px 0;
+    margin-right: 7px;
+}
+
+#giftMenssage {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: darkred; */
+    margin-top: 10px;
+}
+#giftMenssage textarea {
+    margin-top: 5px;
+    width: 50%;
+    border-radius: 2px;
+    border: 1px solid rgb(100, 100, 100);
+}
+
+#giftImage {
+    display: none;
+    flex-direction: column;
+}
+
+label span {
+    font-weight: bold;
+}
+#arriveInformation span, #arriveInformationF span {
+    font-weight: bold;
+}
+#arriveInformation, #arriveInformationF {
+    font-size: 12px;
+}
+
+#arriveInformation h3 {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+
+}
+#arriveInformation h4, #arriveInformationF h4 {
+    color: grey;
+    font-weight: bold;
+    font-size: 10px;
+    margin: 20px 0;
+}
+#arriveInformation div {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+#giftImage {
+    margin-top: 20px;
+}
+/* INPUT FILE */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label[for="giftimage"] {
+    border: 1px solid black;
+    background-color: gray;
+    min-width: fit-content;
+    width: 40%;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+label[for="giftimage"] i {
+    margin-left: 15px;
+}
+
+.gift-wrapper-img-title {
+    margin-bottom: 5px;
+}
+
+/* FOOTER BUTONS */
+.FooterButtons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    /* background-color: cyan; */
+}
+
+.FooterButtons button {
+    margin: 5px;
+}
+
+/* VALIDATION */
