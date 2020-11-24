@@ -73,7 +73,7 @@ header {
 .hamburger {
 	position: absolute;
 	right: 1em;
-	top: .5em;
+	top: 1.5em;
 	transition: all 200ms ease-in-out;
 }
 .hamburger:hover {
@@ -152,11 +152,33 @@ nav ul li i:hover {
 }
 
 .big-image {
-	/* max-height: 665px;
-	max-width: 532px; */
 	width: 100%;
 	margin: 0 0 10px 0;
 }
+
+/* Time pop up rules */
+
+.time-form {
+    position: fixed;
+    border: 1px solid black;
+    width: fit-content;
+    right: 5px;
+    background-color: #eeeeee;
+    font-size: 10px;
+    padding: 10px;
+}
+
+.time-form span {
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.time-form-hide {
+	display: none;
+}
+
 
 /* Product information rules */
 .product-information {
@@ -343,12 +365,18 @@ nav ul li i:hover {
     display: none;
 }
 
+
 .buttons {
-    position: relative;
-    text-align: right;
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
 }
 
-
+.buttons button {
+	margin-left: 2px;
+	font-size: 1em;
+	width: fit-content;
+}
 
 /* Media Query rules */
 
@@ -388,14 +416,14 @@ nav ul li i:hover {
 	.buybutton {
 		width: 200px;
 	}
+	.time-form {
+		right: 90px;
+	}
 }
 
 @media screen and (min-width: 1000px){
 	.hamburger {
 		display: none;
-	}
-	.logo {
-		margin-top: 1.5em;
 	}
 	header {
 		display: flex;
@@ -405,7 +433,7 @@ nav ul li i:hover {
 	}
 	nav {
 		position: absolute;
-		top: 1em;
+		top: 1.5em;
 		right: 0;
 		display: flex;
 		align-items: center;
@@ -476,6 +504,10 @@ nav ul li i:hover {
 	.ProgressBar {
 		max-width: 1041px;
 	}
+	.time-form {
+		right: 180px;
+		padding: 10px;
+	}
 }
 
 @media screen and (min-width: 2500px){
@@ -498,6 +530,11 @@ nav ul li i:hover {
 	.progressLabelProfile {
 		height: 50px;
 		width: 50px;
+	}
+	.time-form {
+		font-size: 20px;
+		right: 700px;
+		padding: 20px;
 	}
 }
 
@@ -528,5 +565,10 @@ nav ul li i:hover {
 	}
 	.titleprogressLabelProfile {
 		margin-top: -70px;
+	}
+	.time-form {
+		font-size: 30px;
+		right: 1340px;
+		padding: 30px;
 	}
 }

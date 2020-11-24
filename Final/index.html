@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/index.css">
+    <link rel="stylesheet" href="assets/stepOne.css">
+    <link rel="stylesheet" href="assets/stepTwo.css">
+    <link rel="stylesheet" href="assets/stepThree.css">
+    <link rel="stylesheet" href="assets/stepFour.css">
+    <link rel="stylesheet" href="assets/thanks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Shoping Wizard</title>
+</head>
+<body>
+    <header>
+        <img src="assets/img/logo.png" alt="logo" height="30px" class="logo">
+        <i class="fas fa-bars hamburger" id="hamburger-menu"></i>
+        <nav id="navbar-list">
+            <ul class="hide">
+                <li><i class="fas fa-search"></i><a href="#">Search</a></li>
+                <li><i class="fas fa-shopping-bag"></i><a href="#">Mi Pedido</a></li>
+                <li><i class="fas fa-user"></i><a href="#">Mi Cuenta</a></li>
+                <li><i class="fas fa-shopping-cart"></i><a href="#">Mi Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-progressBar progressBar-hide" id="progress-bar">
+        <div class="ProgressBar">
+            <div class="progressLabelProfile progressBar-active"><div class="titleprogressLabelProfile">Profile</div></div>
+            <div class="progressLabelProfile" id="progressBar-2"><div class="titleprogressLabelProfile">Address</div></div>
+            <div class="progressLabelProfile" id="progressBar-3"><div class="titleprogressLabelProfile">Shipping</div></div>
+            <div class="progressLabelProfile" id="progressBar-4"><div class="titleprogressLabelProfile">Finish</div></div>
+            </div>
+        </div>
+    </div>
+    <div class="main-div" id="main-div">
+        <div class="product-images">
+            <div class="product-image">
+                <img src="assets/Img/blanca1.jpg" alt="main-img" class="big-image" id="main-image">
+            </div>
+            <div class="product-miniature">
+                <img src="assets/Img/blanca1.jpg" alt="assets/Img/blanca1.jpg" class="miniature">
+                <img src="assets/Img/blanca2.jpg" alt="assets/Img/blanca2.jpg" class="miniature">
+                <img src="assets/Img/blanca3.jpg" alt="assets/Img/blanca3.jpg" class="miniature">
+                <img src="assets/Img/blanca4.jpg" alt="assets/Img/blanca4.jpg" class="miniature">
+                <img src="assets/Img/blanca5.jpg" alt="assets/Img/blanca5.jpg" class="miniature">
+                <img src="assets/Img/blanca6.jpg" alt="assets/Img/blanca6.jpg" class="miniature">
+                <img src="assets/Img/blanca7.jpg" alt="assets/Img/blanca7.jpg" class="miniature">
+                <img src="assets/Img/blanca8.jpg" alt="assets/Img/blanca8.jpg" class="miniature">
+            </div>
+        </div>
+        <div class="product-information">
+            <div class="name-information">
+                <h2 class="product-name">Nike Downshifter 10</h2>
+            </div>
+            <div class="price-information">
+                <h3 class="price-title">Price</h3>
+                <p class="price" id="price">49.99 €</p>
+            </div>
+            <div class="size-information">
+                <h4 class="size-title">Size</h4>
+                <select name="size" id="size">
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="default" selected>Seleccione una talla</option>
+                </select>
+                <p id="sizeError" class="error-msg error-hiden">Please, select the size</p>
+            </div>
+            <div class="color-information">
+                <h4 class="Color-title">Color</h4>
+                <div class="colors-choose">
+                    <img class="color-img-alt" src="./assets/img/blanca1.jpg" alt="assets/img/blanca1.jpg">
+                    <img class="color-img-alt" src="./assets/img/marron1.jpg" alt="assets/img/marron1.jpg">
+                    <img class="color-img-alt" src="./assets/img/negra1.jpg" alt="assets/img/negra1.jpg">
+                    <img class="color-img-alt" src="./assets/img/rosa1.jpg" alt="assets/img/rosa1.jpg">
+                    <img class="color-img-alt special-price" src="./assets/img/signobeige1.jpg" alt="assets/img/signobeige1.jpg">
+                    <img class="color-img-alt special-price" src="./assets/img/signodorado1.jpg" alt="assets/img/signodorado1.jpg">
+                    <img class="color-img-alt special-price" src="./assets/img/signoblanco1.jpg" alt="assets/img/signoblanco1.jpg">
+                    <img class="color-img-alt special-price" src="./assets/img/signoverdeazulado1.jpg" alt="assets/img/signoverdeazulado1.jpg">
+                </div>
+            </div>
+            <div class="buybutton" id="buy-button">Buy!</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="menu-footer">
+            <div class="item-footer">
+                <h3>Sitio web</h3>
+                    <ul>
+                        <li class="margin-items-footer">Search</li>
+                        <li class="margin-items-footer">Mi Pedido</li>
+                        <li class="margin-items-footer">Mi Cuenta</li>
+                        <li class="margin-items-footer">Mi Carrito</li>
+                    </ul>
+            </div>
+            <div class="item-footer">
+                <h3>Guía de compra</h3>
+                    <ul>
+                        <li class="margin-items-footer">Ventajas</li>
+                        <li class="margin-items-footer">Cambios y devoluciones</li>
+                        <li class="margin-items-footer">Guía de tallas</li>
+                        <li class="margin-items-footer">FAQ's</li>
+                    </ul>
+            </div>
+            <div class="item-footer">
+                <h3>Contacto</h3>
+                    <ul>
+                        <li class="margin-items-footer">Atención al cliente</li>
+                        <li class="margin-items-footer">Trabaja con nosotros</li>
+                        <li class="margin-items-footer">Devolución del pedido</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="right-footer">
+            <div class="items-garantie">
+                <p class="margin-items-center"><i class="fa fa-credit-card icons"></i>PAGO SEGURO</p>
+                <p class="margin-items-center"><i class="fa fa-check-circle icons"></i>NUESTRA GARANTÍA</p>
+                <p class="margin-items-center"><i class="fa fa-calendar icons"></i>CAMBIOS Y DEVOLUCIONES GRATIS</p>
+            </div>
+            <div class="items-reserved">
+                <p>2020 Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/index.js"></script>
+</body>
+</html>

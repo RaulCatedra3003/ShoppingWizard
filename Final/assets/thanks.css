@@ -1,0 +1,27 @@
+.total-time {
+    text-align: center;
+    font-size: .7em;
+    margin-bottom: 1em;
+}
+
+#arriveInformationF h4 {
+    margin-bottom: 10px;
+}
+
+#arriveInformationF span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#arriveInformationF br {
+    margin: 0;
+}
+
+.resume-order {
+    display: flex;
+    flex-direction: column;
+}
+
+.elapsed-time {
+    font-weight: 600;
+}

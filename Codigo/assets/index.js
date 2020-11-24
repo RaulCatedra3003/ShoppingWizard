@@ -1,3 +1,4 @@
+// Get first elements from DOM
 const navbarMenu = document.getElementById('navbar-list');
 const hamburger = document.getElementById('hamburger-menu');
 const miniatures = document.querySelectorAll(".miniature");
@@ -13,12 +14,13 @@ const progressBar3 = document.getElementById('progressBar-3');
 const progressBar4 = document.getElementById('progressBar-4');
 const buyButton = document.getElementById("buy-button");
 
-// HAMBURGER MENU
+// Hamburger menu
 hamburger.addEventListener('click', function() {
     navbarMenu.classList.toggle('active');
     hamburger.classList.toggle('rotate');
 })
-// CHANGE IMG
+
+// Change img
 miniatures.forEach(function(el) {
     el.addEventListener("click", function(e) {
         mainImg.src = e.target.alt
@@ -29,7 +31,8 @@ miniatures.forEach(function(el) {
         mainImg.src = e.target.alt;
     })
 })
-// CHANGE MINIATURE IMGS
+
+// Change miniature imgs
 colorChange.forEach(function(el) {
     el.addEventListener('click', function(e) {
         var specialPrice = "59,99 €";
@@ -45,14 +48,17 @@ colorChange.forEach(function(el) {
         }
     })
 })
+
 // Event listeners of size
 size.addEventListener("blur", validateSize);
 size.addEventListener("click", hideSizeError);
+
 // Event listener for button
 buyButton.addEventListener("click", inicioCompra);
+buyButton.addEventListener("click", timeOut);
 
 
-/* Buy button */
+// Global variables to validate forms
 var sizeValidate = false;
 var usernameValidate = false;
 var emailValidate = false;
@@ -81,7 +87,7 @@ var user = {
 
 /* Gobal Functions to eventlisteners */
 
-/* Index */
+//Index
 function hideSizeError() {
     sizeError.classList.add("error-hiden");
 };
@@ -107,7 +113,7 @@ function clearForm1() {
 function clearForm2() {
     submitStepTwoBtn.disabled = true;
 }
-/* Functions to Event Listeners step 1 */
+//Functions to Event Listeners step 1
 function validateUserName (e) {
     var username = /^\S{5,20}$/
     var validateUsername = userUsername.value;
@@ -211,7 +217,7 @@ function validateConfirmPassword(e) {
     }
 }
 
-/* Functions to Event Listeners step 2 */
+//Functions to Event Listeners step 2
 function validateUserFName(e) {
     var leters = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/
     var userFNameV = userFName.value;
@@ -459,7 +465,7 @@ function validateUserPhone (e) {
     }
 }
 
-/* Functions to Event Listeners step 3 */
+//Functions to Event Listeners step 3
 function calculateDate (e) {
     delivery.style.display = "block";
 
@@ -502,7 +508,7 @@ function hiddeDeliveri () {
     document.getElementById("step-4").disabled = true;
 }
 
-/* Functions to Event Listeners step 4 */
+//Functions to Event Listeners step 4
 function acceptTerms() {
     if ( acceptTerm.checked ) {
         finalBuyButton.disabled = false;
@@ -512,6 +518,7 @@ function acceptTerms() {
 }
 
 /* Global functions to change between steps */
+
 function inicioCompra() {
         if (sizeValidate === true) {
         buyButton.removeEventListener("click", inicioCompra);
@@ -525,6 +532,11 @@ function inicioCompra() {
         progressBar.classList.remove("progressBar-hide");
         mainDiv.innerHTML =`
         <div class="step-one" data-key="1">
+            <div class="time-form time-form-hide" id="time-form-hide">
+                <p>You started registering:</p>
+                <span id="time-out"></span>
+                <p>Hurry up!</p>
+            </div>
             <form name="profile" class="form-step-one">
                 <legend class="title-form-step-one">Profile</legend>
                 <fieldset>
@@ -543,7 +555,7 @@ function inicioCompra() {
                 </fieldset>
                 <fieldset class="buttons">
                     <button type="reset" id="clearBtn1" class="allButtons">Clear form</button>
-                    <button class="nextBtn allButtons" id="submitStepOneBtn" disabled>Next</button>
+                    <button class="submit-button allButtons" id="submitStepOneBtn" disabled>Next</button>
                 </fieldset>
             </form>
         </div>`;
@@ -580,11 +592,17 @@ function goStep2() {
         userConfirmpass.removeEventListener("blur", validateConfirmPassword);
         submitStepOneBtn.removeEventListener("click", goStep2);
         clearButton1.removeEventListener("click", clearForm1);
+        buyButton.removeEventListener("click", timeOut);
 
         progressBar2.classList.add("progressBar-active");
 
         mainDiv.innerHTML = "";
         mainDiv.innerHTML = `
+        <div class="time-form time-form-hide"  id="time-form-hide">
+            <p>You started registering:</p>
+            <span id="time-out">1 minute 30 second ago</span>
+            <p>Hurry up!</p>
+        </div>
         <form name="adress" class="step2-form">
             <legend class="title-form">Address</legend>
             <fieldset>
@@ -698,6 +716,11 @@ function goStep3() {
 
         mainDiv.innerHTML = "";
         mainDiv.innerHTML = `
+        <div class="time-form time-form-hide" id="time-form-hide">
+            <p>You started registering:</p>
+            <span id="time-out">1 minute 30 second ago</span>
+            <p>Hurry up!</p>
+        </div>
         <form action="">
             <fieldset class="Step3">
                 <legend>Shipping</legend>
@@ -717,7 +740,7 @@ function goStep3() {
                     </div>
                     <div id="arriveInformation">
                     <h4>ESTIMATE DELIVERY DATE:</h4>
-                    <div>Between <span id="startdate"></span><br> and <span id="enddate"></span> </div>
+                    <div>Between <span id="startdate"></span> and <span id="enddate"></span> </div>
                     </div>
                     <div class="gift">
                         <input type="checkbox" name="gift" id="gift">
@@ -734,7 +757,7 @@ function goStep3() {
                     </div>
                 </fieldset>
             </fieldset>
-            <fieldset class="FooterButtons">
+            <fieldset class="buttons">
                 <button type="reset" id="reset" class="allButtons">Clear form</button>
                 <button id="step-4" disabled class="allButtons">Next</button>
             </fieldset>
@@ -785,6 +808,11 @@ function goStep4() {
     mainDiv.innerHTML = `
     <section id="order-complete" class="resume-order">
         <div class="wrapper">
+            <div class="time-form time-form-hide" id="time-form-hide">
+                <p>You started registering:</p>
+                <span id="time-out"></span>
+                <p>Hurry up!</p>
+            </div>
             <div class="order-complete-payment">
                 <div class="payment-header">
                     <h3>Your order</h3>
@@ -815,8 +843,8 @@ function goStep4() {
                 <input type="checkbox" id="term" name="term">
                 <label for="term">I have read and I accept the terms and conditions.</label>
                 <p class="error-msg error-hiden" id="error">Please accept the terms and conditions</p>
-                </form>
                 <button id="final-buy-btn" class="allButtons" disabled>Buy Now</button>
+                </form>
             </div>
         </div>
     </section>`;
@@ -842,7 +870,91 @@ function goStep4() {
     shippingPrice = parseFloat(shippingPriceString);
     productPriceTotal.innerText = (parseFloat(product.price) + shippingPrice).toFixed(2) + " €";
 }
-
 function goFinalPage() {
-    console.log("casi casi");
+    var timeToProcesate = elapsedTime;
+    clearInterval(countSecond);
+    clearInterval(countTime);
+    acceptTerm.removeEventListener("click", acceptTerms);
+    finalBuyButton.removeEventListener("click", goFinalPage);
+
+    progressBar.classList.add("progressBar-hide");
+
+    mainDiv.innerHTML = "";
+    mainDiv.innerHTML = `
+    <section id="order-complete" class="resume-order">
+        <div class="wrapper">
+            <div class="order-complete-payment">
+                <div class="payment-header">
+                    <h3>Thanks for your order!</h3>
+                </div>
+                <div class="payment-body">
+                    <p><span class="label">Shoes </span><span id="product-price"></span></p>
+                    <p id="product-shipping"></p>
+                </div>
+                <div class="payment-footer">
+                    <p><span class="label">Total </span><span id="product-price-total"></span></p>
+                </div>
+            </div>
+            <div class="order-complete-product">
+                <div class="product-header">
+                    <h2>Your purchase</h2>
+                </div>
+                <div class="product-body">
+                    <div class="product-body-img">
+                        <img src="" alt="" id="product-image">
+                    </div>
+                    <div class="product-body-details">
+                        <h3>Nike Downshifter 10</h3>
+                        <p><span class="label">Size </span><span id="product-size" class="product-size"></span></p>
+                        <div id="arriveInformationF"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total-time" id="total-time-elapsed"></div>
+    </section>`;
+
+    deliveryDate = document.getElementById('arriveInformationF');
+    productImg = document.getElementById('product-image');
+    productSize = document.getElementById('product-size');
+    productPrice = document.getElementById('product-price');
+    productShipping = document.getElementById('product-shipping');
+    productPriceTotal = document.getElementById('product-price-total');
+    registrationTime = document.getElementById('total-time-elapsed');
+
+    deliveryDate.innerHTML = product.deliveryDate;
+    productImg.src = product.color;
+    productSize.innerText = product.size;
+    productPrice.innerText = product.price;
+    productShipping.innerText = product.shippingOption;
+    shippingPriceString = product.shippingOption.slice(-7,-1);
+    shippingPrice = parseFloat(shippingPriceString);
+    productPriceTotal.innerText = (parseFloat(product.price) + shippingPrice).toFixed(2) + " €";
+    registrationTime.innerHTML = `<p>Your registration took:<span class="elapsed-time" id="elpased-time"></span></p>`;
+    elapsedTime = document.getElementById('elpased-time');
+    elapsedTime.innerText = " " + ((timeToProcesate / 60).toFixed(0)) + " minutes, " + (timeToProcesate % 60) + " seconds.";
+}
+
+function timeOut () {
+    elapsedTime = 0;
+    count = 0;
+    countSecond = setInterval(function() {
+        elapsedTime ++;
+        console.log(elapsedTime);
+    },1000);
+    countTime = setInterval (function () {
+        count++;
+        timeOut = document.getElementById('time-out');
+        timeOutForm = document.getElementById('time-form-hide');
+        timeOut.innerText = count + "  minute ago";
+        timeOutForm.classList.remove("time-form-hide");
+        setTimeout(hideAgain, 5000);
+        if (count === 5) {
+            location.reload();
+        }
+    }, 60000);
+}
+function hideAgain() {
+    timeOutForm = document.getElementById('time-form-hide');
+    timeOutForm.classList.add("time-form-hide");
 }

@@ -1,11 +1,8 @@
 .step-one {
-    width: 80%;
-    margin: 0 auto;
-    padding-left: 1.5em;
+    width: 90%;
     font-size: .8em;
+    margin: 0 auto;
 }
-
-
 
 .title-form-step-one {
     position: relative;
@@ -13,8 +10,6 @@
     font-size: 1.5em;
     font-weight: 600;
 }
-
-
 
 .form-step-one-label {
     position: relative;
@@ -28,11 +23,6 @@
     display: block;
     height: 2em;
     width: 90%;
-    max-width: 250px;
+    max-width: 400px;
+    font-size: 0.8em;
 }
-
-button {
-    margin: 1.5em 0;
-}
-
-

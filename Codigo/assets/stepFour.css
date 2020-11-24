@@ -10,9 +10,6 @@
 .label {
   color: #555;
 }
-.date {
-  margin: 0;
-}
 .error-hiden {
   display: none;
 }
@@ -21,7 +18,9 @@
 .order-complete-payment {
   background: #fff;
   margin-bottom: 1em;
-  padding: 0 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 .payment-header {
   border-bottom: 1px solid #ddd;
@@ -45,6 +44,7 @@
 .order-complete-product {
   background: #fff;
   padding-left: 2em;
+  padding: 1em;
 }
 .product-header h2 {
   margin-bottom: 1em;
@@ -108,10 +108,11 @@
     margin: 0 4em;
     padding-top: 2em;
   }
+
   .order-complete-payment {
     margin-left: 1em;
     padding: 1em;
-    flex: auto;
+    flex: 1 auto;
     min-width: 200px;
   }
   .order-complete-product {

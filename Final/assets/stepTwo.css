@@ -1,0 +1,53 @@
+/* Rules for step 2 */
+.step2-form {
+    width: 90%;
+    margin: auto;
+    font-size: .8em;
+}
+
+.title-form {
+    position: relative;
+    margin: 2em 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.form-lable {
+    position: relative;
+    display: block;
+    padding: 10px 0 10px 0;
+}
+
+.form-imput {
+    position: relative;
+    display: block;
+    height: 2em;
+    width: 90%;
+    max-width: 400px;
+    font-size: 0.8em;
+}
+
+.form-imput--checkbox {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 0;
+}
+
+.buttons {
+    position: relative;
+    text-align: right;
+}
+
+.error-msg {
+    font-size: .7em;
+    color: red;
+    background-color: rgb(228, 177, 177);
+    width: fit-content;
+    padding: 5px;
+    margin: 2px 0 0 0;
+}
+
+.error-hiden {
+    display: none;
+}
+
